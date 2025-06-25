@@ -29,6 +29,13 @@ Installation
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/DCR-dev-lab/MoodMate.git
-   
+   git clone https://github.com/DCR-dev-lab/MoodMate.git   
    cd MoodMate
+   
+2. Install Dependencies
+   ```bash
+   pip install matplotlib
+   
+3. Run the Application 
+   ```bash
+   python moodmate.py
