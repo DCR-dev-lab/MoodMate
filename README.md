@@ -22,7 +22,7 @@ MoodMate is a Python-based mood tracking application designed to help you unders
 
 Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - pip (Python package installer)
 
 Installation
@@ -30,4 +30,5 @@ Installation
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/DCR-dev-lab/MoodMate.git
+   
    cd MoodMate
