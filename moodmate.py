@@ -625,53 +625,6 @@ class PomodoroTimer:
 class MoodAnalyzer:
     """Provides tools for analyzing and visualizing mood data."""
     
-    @staticmethod
-    def plot_mood_trends(logs: List[Dict]) -> None:
-        """Generates and displays a plot of mood trends over time."""
-        if not logs:
-            print(f"{COLORS['warning']}⚠️ Not enough data to show trends. Log more moods!{COLORS['reset']}")
-            return
-        
-        dates = [datetime.fromisoformat(e["timestamp"]) for e in logs]
-        moods = [e["mood"] for e in logs]
-        
-        plt.figure(figsize=(12, 6))
-        
-        # Define a fixed order and color for moods to ensure consistency
-        mood_order = sorted(list(MOOD_TASKS.keys()))
-        mood_colors = {
-            "happy": "limegreen", "tired": "darkblue", "bored": "darkorange",
-            "anxious": "red", "motivated": "purple", "sad": "gray",
-            "stressed": "maroon", "overwhelmed": "darkred", "confused": "teal",
-            "inspired": "gold"
-        }
-        
-        # Assign numerical y-values for plotting discrete moods
-        mood_to_y_value = {mood: i for i, mood in enumerate(mood_order)}
-        y_values = [mood_to_y_value[mood] for mood in moods]
-
-        # Plot each mood
-        for mood in mood_order:
-            x_data = [d for d, m in zip(dates, moods) if m == mood]
-            y_data = [mood_to_y_value[m] for d, m in zip(dates, moods) if m == mood]
-            if x_data:
-                plt.scatter(x_data, y_data, color=mood_colors.get(mood, "black"), label=mood.title(), alpha=0.7, s=100, edgecolors='w')
-        
-        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-        plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=max(1, len(set(dates)) // 7))) # Adjust interval based on data density
-        
-        plt.xticks(rotation=45, ha='right') # Rotate and align for better readability
-        plt.yticks(list(mood_to_y_value.values()), [mood.title() for mood in mood_order])
-        
-        plt.title("Your Mood Journey Over Time", fontsize=16)
-        plt.xlabel("Date", fontsize=12)
-        plt.ylabel("Mood", fontsize=12)
-        plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0.)
-        plt.grid(True, linestyle='--', alpha=0.6)
-        plt.tight_layout()
-        plt.show()
-    
-    @staticmethod
     def generate_weekly_summary(logs: List[Dict]) -> str:
         """Generates a text summary of the week's mood and task activity."""
         if not logs:
@@ -750,12 +703,11 @@ class MoodMateApp:
                 print(f"[1] {COLORS['menu']}Record My Mood & Activity{COLORS['reset']}")
                 print(f"[2] {COLORS['menu']}Quick Mood Check{COLORS['reset']}")
                 print(f"[3] {COLORS['menu']}View My Mood Stats{COLORS['reset']}")
-                print(f"[4] {COLORS['menu']}See Mood Trends (Chart){COLORS['reset']}")
-                print(f"[5] {COLORS['menu']}Start a Productivity Timer (Pomodoro){COLORS['reset']}")
-                print(f"[6] {COLORS['menu']}Manage My Entries (Edit/Delete/Complete){COLORS['reset']}")
-                print(f"[7] {COLORS['menu']}Data Tools (Backup/Export){COLORS['reset']}")
-                print(f"[8] {COLORS['menu']}Get My Weekly Summary{COLORS['reset']}")
-                print(f"[9] {COLORS['warning']}Exit MoodMate{COLORS['reset']}")
+                print(f"[4] {COLORS['menu']}Start a Productivity Timer (Pomodoro){COLORS['reset']}")
+                print(f"[5] {COLORS['menu']}Manage My Entries (Edit/Delete/Complete){COLORS['reset']}")
+                print(f"[6] {COLORS['menu']}Data Tools (Backup/Export){COLORS['reset']}")
+                print(f"[7] {COLORS['menu']}Get My Weekly Summary{COLORS['reset']}")
+                print(f"[0] {COLORS['warning']}Exit MoodMate{COLORS['reset']}")
                 
                 choice = input(f"\n{COLORS['input']}👉 What would you like to do? (1-9): {COLORS['reset']}").strip()
                 
@@ -766,16 +718,14 @@ class MoodMateApp:
                 elif choice == "3":
                     self._view_stats()
                 elif choice == "4":
-                    self._visualize_trends()
-                elif choice == "5":
                     self._run_pomodoro()
-                elif choice == "6":
+                elif choice == "5":
                     self._manage_entries_flow()
-                elif choice == "7":
+                elif choice == "6":
                     self._data_management_flow()
-                elif choice == "8":
+                elif choice == "7":
                     self._weekly_summary_flow()
-                elif choice == "9":
+                elif choice == "0":
                     if self._confirm_exit():
                         print(f"\n{COLORS['success']}👋 Thanks for using MoodMate! Have a wonderful day!{COLORS['reset']}")
                         break
@@ -969,24 +919,6 @@ class MoodMateApp:
         
         input(f"\n{COLORS['input']}Press Enter to return to the main menu...{COLORS['reset']}")
 
-    def _visualize_trends(self) -> None:
-        """Prompts for days and then displays mood trends using a plot."""
-        self._clear_screen()
-        print(f"{COLORS['header']}--- 📈 See Your Mood Trends ---{COLORS['reset']}")
-        
-        days_str = input(f"{COLORS['input']}How many past days would you like to visualize? (Default: 30 days): {COLORS['reset']}").strip()
-        try:
-            days = int(days_str) if days_str else 30
-            if days <= 0:
-                raise ValueError
-        except ValueError:
-            print(f"{COLORS['warning']}⚠️ Invalid number. Showing trends for the last 30 days.{COLORS['reset']}")
-            days = 30
-        
-        logs = self.logger.get_recent_moods(days)
-        self.analyzer.plot_mood_trends(logs)
-        
-        input(f"\n{COLORS['input']}Press Enter to return to the main menu...{COLORS['reset']}")
 
     def _run_pomodoro(self) -> None:
         """Handles the Pomodoro timer setup and execution."""
