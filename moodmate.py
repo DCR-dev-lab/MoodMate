@@ -62,182 +62,327 @@ EXPORT_FOLDER = "moodmate_exports"
 # Enhanced Mood Dictionary with categorized tasks
 MOOD_TASKS = {
     "happy": {
-        "productivity": [
-            "Revise your notes thoroughly", "Work on a pending project with enthusiasm",
-            "Help a friend with their studies", "Group study session"
+        "energize": [
+            "Go for a brisk walk outdoors and enjoy the weather, perhaps discovering a new path.",
+            "Listen to your favorite upbeat music and sing along loudly, feeling the rhythm.",
+            "Plan a fun, low-key activity for later today or this week, like a movie night or picnic.",
+            "Do a quick burst of physical activity like dancing, jumping jacks, or a short jog.",
+            "Engage in a favorite sport or physical game.",
+            "Take on a new small challenge that excites you.",
+            "Spend time in natural sunlight.",
+            "Organize a playlist of songs that make you feel good."
         ],
-        "creativity": [
-            "Start a new creative hobby", "Brainstorm new project ideas",
-            "Create a vision board", "Write a short story"
+        "connect": [
+            "Call or text a friend or family member just to say hello and share positive news.",
+            "Send a thoughtful message to someone you appreciate, expressing your gratitude.",
+            "Share a positive update or a funny anecdote with a loved one.",
+            "Offer a small, genuine compliment to someone you interact with today.",
+            "Plan a virtual coffee break with a distant friend.",
+            "Help a neighbor with a small task.",
+            "Write a thank-you note to someone who made your day.",
+            "Join a social club or group that aligns with your interests."
         ],
-        "social": [
-            "Call a family member or close friend", "Plan a fun outing",
-            "Engage in a discussion with peers", "Teach someone a concept"
+        "create_and_grow": [
+            "Start a new small creative project you've been wanting to try, like a sketch or a craft.",
+            "Brainstorm new ideas for a personal goal, hobby, or even a community initiative.",
+            "Learn a new interesting fact or skill online, like a simple magic trick or a basic coding command.",
+            "Organize an area of your space that brings you joy, making it more aesthetically pleasing.",
+            "Work on a passion project that aligns with your interests.",
+            "Explore a new app or tool that enhances productivity or creativity.",
+            "Read an inspiring biography or success story.",
+            "Set a new personal best in a hobby or activity."
         ]
     },
     "tired": {
-        "rest": [
-            "Take a 20-min power nap", "Do light reading",
-            "Drink water and rest", "Listen to ambient music"
+        "recharge_mind": [
+            "Take a short, restful power nap (20-30 minutes) in a quiet, dark room.",
+            "Listen to a calming audiobook or a gentle, non-demanding podcast.",
+            "Do a quick guided meditation for relaxation, focusing on your breath.",
+            "Close your eyes and practice deep breathing for a few minutes, counting your breaths.",
+            "Rest your eyes by looking out a window at something distant.",
+            "Avoid screen time for 15-30 minutes.",
+            "Practice mindful breathing exercises.",
+            "Do a brief body scan to identify tension."
         ],
-        "self-care": [
-            "Take a warm shower", "Do a short meditation",
-            "Use calming essential oils", "Make herbal tea"
+        "restore_body": [
+            "Drink a full glass of water and rest in a comfortable position.",
+            "Do some gentle stretching or light, restorative yoga poses.",
+            "Take a warm, comforting shower or bath with soothing scents.",
+            "Prepare a simple, nutritious snack like fruit or nuts.",
+            "Give yourself a gentle hand or foot massage.",
+            "Lie down with your legs elevated against a wall.",
+            "Apply a soothing eye mask.",
+            "Wear comfortable, loose clothing."
         ],
-        "gentle": [
-            "Stretch gently", "Go outside for air",
-            "Journal briefly", "Deep breathing 5 minutes"
+        "light_engagement": [
+            "Do light reading from a non-demanding book or magazine, or browse a light article online.",
+            "Look at calming images or watch a slow-paced nature video on mute.",
+            "Sit quietly and observe your surroundings without judgment or analysis.",
+            "Listen to instrumental or ambient music that promotes relaxation.",
+            "Do a very simple, repetitive task like folding laundry or tidying a drawer.",
+            "Journal a few unedited thoughts or feelings.",
+            "Sit outside and listen to the sounds of nature.",
+            "Watch clouds or observe simple natural patterns."
         ]
     },
     "bored": {
-        "learn": [
-            "Explore a new topic", "Watch an educational YouTube short",
-            "Try a fun coding challenge", "Learn new words in another language"
+        "stimulate_mind": [
+            "Explore a random topic on Wikipedia or an educational website like Khan Academy.",
+            "Watch an educational YouTube video or a short documentary on a new subject.",
+            "Try a new online puzzle game or brain teaser, like Sudoku or a logic puzzle.",
+            "Learn a few new words in a language you're interested in using a flashcard app.",
+            "Research a niche topic you've always wondered about.",
+            "Listen to a podcast about an unusual subject.",
+            "Do a quick online course on a skill you'd like to learn.",
+            "Read a compelling non-fiction article or essay."
         ],
-        "create": [
-            "Organize your digital files", "Write a short story",
-            "Research historical facts", "Learn a magic trick"
+        "engage_creativity": [
+            "Doodle, sketch, or color in a coloring book, experimenting with colors.",
+            "Write a short journal entry about anything that comes to mind, a dream, or a hypothetical scenario.",
+            "Organize a digital folder or clean up your desktop files, making it more efficient.",
+            "Plan a hypothetical trip or event, researching destinations, activities, and budget.",
+            "Start a collection of interesting facts or quotes.",
+            "Design a simple graphic or logo for a fictional company.",
+            "Try a simple craft project like origami or making a paper airplane.",
+            "Brainstorm ideas for a fictional story or character."
         ],
-        "play": [
-            "Play a brain game", "Try a recipe",
-            "Take a virtual museum tour", "Do an online quiz"
+        "explore_new": [
+            "Discover a new music artist or genre you've never listened to before, and create a playlist.",
+            "Browse an online store for interesting new products or ideas (no pressure to buy anything).",
+            "Try a simple new recipe or mix a new non-alcoholic drink or smoothie.",
+            "Walk a different route than usual if you go outside, observing new details.",
+            "Explore a virtual museum or art gallery online.",
+            "Do an online quiz about a random, fun topic.",
+            "Try a new physical activity for a short period, like juggling or stretching differently.",
+            "Browse through a cookbook for inspiration."
         ]
     },
     "anxious": {
-        "calm": [
-            "Do breathing exercises", "Write your thoughts",
-            "Listen to nature sounds", "Practice mindfulness"
+        "grounding": [
+            "Focus on your breath: inhale slowly for 4, hold for 4, exhale for 6, repeating several times.",
+            "Use the '5-4-3-2-1' technique: name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste.",
+            "Hold an ice cube in your hand until it melts, focusing on the cold sensation.",
+            "Press your feet firmly into the ground and notice the sensation, feeling connected to the earth.",
+            "Splash cold water on your face or wrists to reset your system.",
+            "Gently massage your temples or neck.",
+            "Focus on a repetitive action, like snapping your fingers.",
+            "Identify and name objects of a specific color around you."
         ],
-        "ground": [
-            "Focus on a small task", "Declutter your space",
-            "Hold ice or drink hot tea", "Do a body scan meditation"
+        "soothe": [
+            "Listen to calming nature sounds (rain, ocean waves) or soft, instrumental music.",
+            "Drink a warm cup of herbal tea slowly and mindfully, noticing its warmth and flavor.",
+            "Take a slow, gentle walk in a quiet area, paying attention to your steps.",
+            "Light a calming scented candle or use an essential oil diffuser with lavender.",
+            "Wrap yourself in a cozy blanket and feel its comfort.",
+            "Do a guided meditation focused on releasing tension.",
+            "Practice mindful eating with a small snack, noticing textures and flavors.",
+            "Look at comforting pictures or photos."
         ],
-        "distract": [
-            "Doodle mindfully", "Spend time in nature",
-            "5-4-3-2-1 grounding technique", "Listen to comforting podcast"
+        "process": [
+            "Write down all your worries and thoughts in a journal, then close it and put it away.",
+            "Talk to a trusted friend or family member about how you're feeling, without seeking solutions.",
+            "Do a quick, repetitive task like tidying a small area of your room or desk.",
+            "Allow yourself to feel the emotion without judgment, reminding yourself that it will pass.",
+            "Visualize a safe and peaceful place in your mind.",
+            "Challenge one anxious thought and find evidence against it.",
+            "Do a simple, distracting puzzle or word game.",
+            "Listen to a podcast that diverts your attention."
         ]
     },
     "motivated": {
-        "work": [
-            "Start a postponed project", "Do a Pomodoro session",
-            "Organize your space", "Set new goals"
+        "productivity_boost": [
+            "Start the most important task on your list, even if it's just for 15 minutes to build momentum.",
+            "Break down a large project into its absolute smallest, actionable steps, and tackle one.",
+            "Organize your workspace for optimal efficiency, decluttering distractions.",
+            "Review your goals and select one to make immediate, tangible progress on.",
+            "Block out specific time slots for focused work.",
+            "Use the Pomodoro technique to maintain focus.",
+            "Complete a quick, easy task to build confidence.",
+            "Set a challenging but achievable deadline for a small task."
         ],
-        "plan": [
-            "Break big tasks into parts", "Review your progress",
-            "Create a project roadmap", "Seek advice from a mentor"
+        "plan_and_strategize": [
+            "Create a detailed plan for an upcoming assignment or project, outlining all stages.",
+            "Set new, challenging but achievable goals for yourself for the next week or month.",
+            "Research advanced topics related to your interests or academic field.",
+            "Update your resume or professional portfolio with your latest achievements.",
+            "Create a visual timeline for a long-term goal.",
+            "Brainstorm potential challenges and proactive solutions.",
+            "Review successful strategies you've used in the past.",
+            "Outline key steps for a new skill acquisition."
         ],
-        "improve": [
-            "Master a complex concept", "Teach what you know",
-            "Read a biography", "Study advanced topics"
+        "skill_development": [
+            "Learn a new complex concept by breaking it down and explaining it aloud to yourself.",
+            "Practice a specific skill you want to improve, setting a clear objective.",
+            "Watch an in-depth tutorial or webinar to enhance your knowledge in a specific area.",
+            "Seek out resources (books, articles, experts) to deepen your understanding of a topic.",
+            "Take a short online course related to your field.",
+            "Apply a new technique you've learned in your work.",
+            "Teach a concept to someone else to solidify your understanding.",
+            "Engage in deliberate practice for a specific skill."
         ]
     },
     "sad": {
-        "comfort": [
-            "Listen to soothing music", "Write a positive diary",
-            "Talk to someone supportive", "Watch something uplifting"
+        "comfort_and_care": [
+            "Listen to calm, soothing music that brings you peace and allows for quiet reflection.",
+            "Wrap yourself in a cozy blanket and allow yourself to simply rest and feel the emotions.",
+            "Prepare a warm, favorite comforting meal or bake something simple and aromatic.",
+            "Watch an uplifting or heartwarming movie or show that offers a sense of solace.",
+            "Drink a warm beverage like hot chocolate or herbal tea.",
+            "Light a comforting candle and enjoy its glow.",
+            "Take a warm bath with Epsom salts.",
+            "Wear your most comfortable clothes."
         ],
-        "self-care": [
-            "Do a comforting hobby", "Treat yourself kindly",
-            "Spend time with a pet", "Reflect on gratitude"
+        "gentle_connection": [
+            "Call or text a trusted loved one for a supportive chat, even if it's just to listen.",
+            "Spend time with a pet, enjoying their unconditional affection and calming presence.",
+            "Look at old photos that bring back happy memories and cherished connections.",
+            "Do a small, kind act for yourself, like enjoying a favorite snack or a small treat.",
+            "Send a loving text to someone you care about.",
+            "Have a comforting conversation with someone who understands.",
+            "Spend time in a quiet, familiar place with someone you trust.",
+            "Watch an old comfort movie with a loved one."
         ],
-        "express": [
-            "Draw or doodle", "Take a social media break",
-            "Feel the emotion openly", "Try a self-compassion meditation"
+        "creative_release": [
+            "Write a positive diary entry, focusing on good memories, things you're grateful for, or future hopes.",
+            "Draw, paint, or doodle freely, without pressure for perfection or specific outcome.",
+            "Listen to a guided meditation focused on self-compassion and acceptance.",
+            "Take a break from social media to avoid comparisons or overwhelming content.",
+            "Listen to music that allows you to process your emotions.",
+            "Journal about your feelings without censoring yourself.",
+            "Write a short, reflective poem or piece of prose.",
+            "Engage in a simple craft like knitting or coloring."
         ]
     },
-    "stressed": { # Added 'stressed' mood
+    "stressed": {
         "physical_release": [
             "Go for a brisk walk or jog outdoors to clear your head and burn off excess energy.",
             "Squeeze a stress ball or clench and release your fists several times.",
             "Do some quick stretches or light exercise like push-ups or squats.",
             "Put on some energetic music and dance it out for a few minutes.",
-            "Do some vigorous cleaning or organizing to channel energy."
+            "Do some vigorous cleaning or organizing to channel energy.",
+            "Take a few minutes to jump rope or do jumping jacks.",
+            "Engage in a short burst of cardio.",
+            "Do a series of progressive muscle relaxations."
         ],
         "mental_unload": [
             "Write down all your worries and concerns on a 'brain dump' list to get them out of your head.",
             "Prioritize your tasks and identify the single most critical one to focus on.",
             "Take 5 minutes to plan out the next hour of your day, making it manageable.",
             "Practice a quick mindfulness exercise for 2-3 minutes, focusing on sounds or sights.",
-            "Do a quick review of your schedule to identify and eliminate any unnecessary commitments."
+            "Do a quick review of your schedule to identify and eliminate any unnecessary commitments.",
+            "Break down a daunting task into tiny, manageable steps.",
+            "Use the 'two-minute rule' for quick tasks.",
+            "Visualize success in a difficult situation."
         ],
         "mini_break": [
             "Step away from your work area and look out a window, observing the outside world.",
             "Listen to a short, calming audio track or a favorite song.",
             "Have a healthy snack and a full glass of water, focusing on hydrating.",
             "Do a few deep belly breaths to activate your parasympathetic nervous system.",
-            "Look at something beautiful or pleasant for a few moments, like a plant or artwork."
+            "Look at something beautiful or pleasant for a few moments, like a plant or artwork.",
+            "Do a quick crossword puzzle or sudoku.",
+            "Stand up and stretch for 5 minutes.",
+            "Walk to another room and back."
         ]
     },
-    "overwhelmed": { # Added 'overwhelmed' mood
+    "overwhelmed": {
         "simplify": [
             "Write down absolutely everything on your mind, then categorize or group similar items.",
             "Choose only the top 1-3 most important tasks to focus on right now, deferring others.",
             "Break down a large, daunting task into its absolute smallest, actionable steps.",
             "Eliminate anything from your list that isn't truly essential or urgent, or postpone it.",
-            "Create an 'ignore list' for things you actively choose not to worry about for now."
+            "Create an 'ignore list' for things you actively choose not to worry about for now.",
+            "Automate any repetitive tasks if possible.",
+            "Cancel or reschedule non-essential commitments.",
+            "Focus on completing just one small thing."
         ],
         "structure": [
             "Create a very detailed, step-by-step plan for just one specific task.",
             "Set a timer for 15-20 minutes and work on one thing without distractions, then take a break.",
             "Organize a small physical or digital workspace area to bring a sense of order.",
             "Review your calendar and reschedule any non-urgent commitments to free up mental space.",
-            "Use a project management tool or app to visually organize your tasks."
+            "Use a project management tool or app to visually organize your tasks.",
+            "Create a 'done' list to see your progress.",
+            "Color-code your tasks or notes for better visual organization.",
+            "Set a clear start and end time for your work."
         ],
         "seek_support": [
             "Talk to a mentor, supervisor, or trusted friend about your workload and feelings.",
             "Ask a friend or colleague for help with a specific task, explaining what you need.",
             "Communicate your boundaries or needs to others clearly and kindly.",
             "Take a quick break to connect with someone for emotional support and a different perspective.",
-            "Delegate tasks if you have the option."
+            "Delegate tasks if you have the option.",
+            "Consider professional support if feelings persist.",
+            "Look for online resources or communities for similar experiences.",
+            "Share your workload concerns with a peer."
         ]
     },
-    "confused": { # Added 'confused' mood
+    "confused": {
         "clarify_information": [
             "Re-read the instructions or material slowly, focusing on each sentence and key terms.",
             "Look up unfamiliar terms or concepts immediately using a reliable dictionary or search engine.",
             "Break the confusing problem down into smaller, simpler components to understand each piece.",
             "Try to explain the concept aloud to yourself as if teaching someone else, identifying gaps in understanding.",
-            "Highlight or underline key phrases in the confusing text."
+            "Highlight or underline key phrases in the confusing text.",
+            "Draw a diagram or flowchart to visualize the information.",
+            "Summarize the information in your own words.",
+            "Search for different explanations or analogies online."
         ],
         "seek_external_help": [
             "Ask a specific, well-articulated question to a teacher, peer, or online forum.",
             "Review examples or case studies related to the confusing topic to see application.",
             "Watch an explanatory video or tutorial on the subject from a different source.",
             "Consult a different textbook or resource for an alternative explanation or perspective.",
-            "Schedule a short meeting with an expert or peer for clarification."
+            "Schedule a short meeting with an expert or peer for clarification.",
+            "Collaborate with a classmate on the confusing material.",
+            "Use a Q&A platform to pose your specific question.",
+            "Find a study group to discuss the topic."
         ],
         "mental_reset": [
             "Take a short break (5-10 minutes) to clear your mind completely before returning.",
             "Do a quick, unrelated mental exercise like a simple puzzle or brain teaser.",
             "Drink water and do some light physical stretches to refresh your body and mind.",
             "Return to the problem with fresh eyes after stepping away, often seeing new insights.",
-            "Listen to calming music that doesn't distract you."
+            "Listen to calming music that doesn't distract you.",
+            "Close your eyes and breathe deeply for a minute.",
+            "Change your study location for a fresh perspective.",
+            "Do something completely different for 15 minutes."
         ]
     },
-    "inspired": { # Added 'inspired' mood
+    "inspired": {
         "capture_and_develop": [
             "Immediately write down all your thoughts and ideas, no matter how wild or unformed.",
             "Create a mind map or concept web to connect different aspects of your inspiration visually.",
             "Record a voice memo describing your ideas in detail, allowing for free flow.",
             "Sketch out rough visuals or diagrams if the inspiration is visual, capturing the essence.",
-            "Start a dedicated 'inspiration' journal or digital note file."
+            "Start a dedicated 'inspiration' journal or digital note file.",
+            "Collect images or sounds that resonate with your idea.",
+            "Freewrite about the implications of your inspiration.",
+            "Create a mood board for the idea."
         ],
         "take_action": [
             "Start a small, actionable step towards realizing your inspired idea, like basic research or an outline.",
             "Conduct preliminary research on components needed to bring your idea to life.",
             "Share your idea with someone who can offer constructive feedback or excitement.",
             "Block out dedicated time in your schedule to work on this new inspiration.",
-            "Create a simple prototype or mock-up."
+            "Create a simple prototype or mock-up.",
+            "Identify the first three steps to move forward.",
+            "Set a mini-deadline for the initial phase.",
+            "Reach out to someone who could help you develop the idea."
         ],
         "nurture_flow": [
             "Listen to music that enhances your creative flow or concentration.",
             "Visit a place that stimulates your imagination (e.g., museum, park, unique store, art exhibition).",
             "Read about others who have pursued similar inspirations or creative paths.",
             "Keep an 'inspiration' journal where you regularly collect new ideas and observations.",
-            "Engage in freeform brainstorming sessions."
+            "Engage in freeform brainstorming sessions.",
+            "Allow for periods of unstructured thinking.",
+            "Surround yourself with aesthetically pleasing or stimulating objects.",
+            "Take a nature walk to observe patterns and details."
         ]
     }
 }
+
 
 
 # ======================
