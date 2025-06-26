@@ -709,7 +709,7 @@ class MoodMateApp:
                 print(f"[7] {COLORS['menu']}Get My Weekly Summary{COLORS['reset']}")
                 print(f"[0] {COLORS['warning']}Exit MoodMate{COLORS['reset']}")
                 
-                choice = input(f"\n{COLORS['input']}👉 What would you like to do? (1-9): {COLORS['reset']}").strip()
+                choice = input(f"\n{COLORS['input']}👉 What would you like to do? (1-7): {COLORS['reset']}").strip()
                 
                 if choice == "1":
                     self._log_mood_flow()
@@ -730,7 +730,7 @@ class MoodMateApp:
                         print(f"\n{COLORS['success']}👋 Thanks for using MoodMate! Have a wonderful day!{COLORS['reset']}")
                         break
                 else:
-                    print(f"{COLORS['warning']}⚠️ Oops! That's not a valid option. Please choose a number from 1 to 9.{COLORS['reset']}")
+                    print(f"{COLORS['warning']}⚠️ Oops! That's not a valid option. Please choose a number from 1 to 7.{COLORS['reset']}")
                     time.sleep(1.5) # Give user time to read the message
         
         except KeyboardInterrupt:
